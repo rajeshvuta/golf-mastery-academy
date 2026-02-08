@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Forum - Golf Mastery Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .forum-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .category-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(26, 77, 46, 0.2);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        .category-stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--sand);
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .new-topic-btn {
+            background: var(--accent-gold);
+            color: var(--deep-forest);
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 40px;
+            transition: var(--transition);
+        }
+
+        .new-topic-btn:hover {
+            background: #c49d2e;
+            transform: translateY(-2px);
+        }
+
+        .topic-list {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        .topic-item {
+            padding: 25px 30px;
+            border-bottom: 1px solid var(--sand);
+            display: flex;
+            gap: 20px;
+            align-items: start;
+            transition: var(--transition);
+        }
+
+        .topic-item:hover {
+            background: var(--sand);
+        }
+
+        .topic-item:last-child {
+            border-bottom: none;
+        }
+
+        .topic-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .topic-content {
+            flex: 1;
+        }
+
+        .topic-title-link {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .topic-title-link:hover {
+            color: var(--accent-gold);
+        }
+
+        .topic-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .topic-tag {
+            background: var(--sand);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+
+        .reply-count {
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="25" cy="25" r="24" fill="#1a4d2e" stroke="#d4af37" stroke-width="2"/>
+                    <circle cx="25" cy="25" r="4" fill="#ffffff"/>
+                    <path d="M25 8 L25 21" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M32 15 L28 23" stroke="#d4af37" stroke-width="2" stroke-linecap="round"/>
+                    <text x="25" y="44" font-family="Playfair Display" font-size="8" fill="#d4af37" text-anchor="middle" font-weight="700">GOLF</text>
+                </svg>
+                <span class="logo-text">Golf Mastery Academy</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rules.html">Rules</a></li>
+                <li><a href="clubs.html">Golf Clubs Guide</a></li>
+                <li><a href="lessons.html">Lesson Plans</a></li>
+                <li><a href="tips.html">Tips & Tricks</a></li>
+                <li><a href="videos.html">Video Library</a></li>
+                <li><a href="discussion.html" class="active">Discussion Forum</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" style="min-height: 350px;">
+        <div class="hero-content" style="text-align: center; padding-left: 0; max-width: 100%;">
+            <h1>Community Forum</h1>
+            <p class="subtitle">Connect, share, and learn with fellow golfers</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2 class="section-header">Forum Categories</h2>
+            <div class="forum-categories">
+                <div class="category-card">
+                    <span class="category-icon">🏌️</span>
+                    <h3 class="category-title">Getting Started</h3>
+                    <p>Questions and discussions for beginner golfers. Learn the basics and get started on your golf journey.</p>
+                    <div class="category-stats">
+                        <span>📝 145 Topics</span>
+                        <span>💬 892 Replies</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <span class="category-icon">🎯</span>
+                    <h3 class="category-title">Swing Tips & Technique</h3>
+                    <p>Discuss swing mechanics, drills, and get feedback on your technique from the community.</p>
+                    <div class="category-stats">
+                        <span>📝 326 Topics</span>
+                        <span>💬 1,847 Replies</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <span class="category-icon">⛳</span>
+                    <h3 class="category-title">Short Game & Putting</h3>
+                    <p>Master the scoring clubs. Share tips and ask questions about chipping, pitching, and putting.</p>
+                    <div class="category-stats">
+                        <span>📝 198 Topics</span>
+                        <span>💬 1,124 Replies</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <span class="category-icon">🛠️</span>
+                    <h3 class="category-title">Equipment Reviews</h3>
+                    <p>Discuss clubs, balls, accessories, and technology. Get recommendations and share your experiences.</p>
+                    <div class="category-stats">
+                        <span>📝 267 Topics</span>
+                        <span>💬 1,543 Replies</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <span class="category-icon">🏆</span>
+                    <h3 class="category-title">Course Strategy</h3>
+                    <p>Learn to play smarter golf. Discuss course management, mental game, and scoring strategies.</p>
+                    <div class="category-stats">
+                        <span>📝 178 Topics</span>
+                        <span>💬 956 Replies</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <span class="category-icon">💪</span>
+                    <h3 class="category-title">Fitness & Training</h3>
+                    <p>Golf-specific fitness, flexibility, injury prevention, and training programs.</p>
+                    <div class="category-stats">
+                        <span>📝 112 Topics</span>
+                        <span>💬 634 Replies</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-space">
+            <p>Advertisement</p>
+            <div class="ad-placeholder">728 x 90 Banner Ad</div>
+        </div>
+
+        <section>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                <h2 class="section-header" style="margin-bottom: 0;">Recent Discussions</h2>
+                <a href="#new-topic" class="new-topic-btn">+ New Topic</a>
+            </div>
+
+            <div class="topic-list">
+                <div class="topic-item">
+                    <div class="topic-avatar">JD</div>
+                    <div class="topic-content">
+                        <a href="#" class="topic-title-link">How to fix my slice with driver?</a>
+                        <p>I've been struggling with a persistent slice off the tee. I've tried everything - grip changes, alignment, but nothing seems to work consistently. Any advice?</p>
+                        <div class="topic-meta">
+                            <span>👤 JohnDoe92</span>
+                            <span>🕐 2 hours ago</span>
+                            <span class="topic-tag">Swing Tips</span>
+                            <span class="reply-count">23 replies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-item">
+                    <div class="topic-avatar" style="background: linear-gradient(135deg, #d4af37, #1a4d2e);">SM</div>
+                    <div class="topic-content">
+                        <a href="#" class="topic-title-link">Best wedge setup for beginners?</a>
+                        <p>I'm a beginner (105 handicap) looking to buy my first wedge set. Should I go with 52/56/60 or is that too much? Budget is around $300.</p>
+                        <div class="topic-meta">
+                            <span>👤 SarahM</span>
+                            <span>🕐 5 hours ago</span>
+                            <span class="topic-tag">Equipment</span>
+                            <span class="reply-count">17 replies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-item">
+                    <div class="topic-avatar" style="background: linear-gradient(135deg, #8ba888, #1a4d2e);">MR</div>
+                    <div class="topic-content">
+                        <a href="#" class="topic-title-link">Finally broke 90! Here's what worked for me</a>
+                        <p>After 18 months of dedicated practice, I shot an 87 today! Want to share what helped me improve from 105 to sub-90...</p>
+                        <div class="topic-meta">
+                            <span>👤 MikeR</span>
+                            <span>🕐 Yesterday</span>
+                            <span class="topic-tag">Success Story</span>
+                            <span class="reply-count">42 replies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-item">
+                    <div class="topic-avatar" style="background: linear-gradient(135deg, #1a4d2e, #d4af37);">AL</div>
+                    <div class="topic-content">
+                        <a href="#" class="topic-title-link">Lag putting drill that actually works</a>
+                        <p>I've been using this simple drill for 2 weeks and my 3-putts have dropped dramatically. Here's what you need to do...</p>
+                        <div class="topic-meta">
+                            <span>👤 AmyLee</span>
+                            <span>🕐 Yesterday</span>
+                            <span class="topic-tag">Putting</span>
+                            <span class="reply-count">31 replies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-item">
+                    <div class="topic-avatar" style="background: linear-gradient(135deg, #d4af37, #8ba888);">TC</div>
+                    <div class="topic-content">
+                        <a href="#" class="topic-title-link">Course management tips for high handicappers?</a>
+                        <p>I hit the ball okay but my scores don't reflect it. I think I'm making poor decisions on the course. What should I focus on?</p>
+                        <div class="topic-meta">
+                            <span>👤 TomC</span>
+                            <span>🕐 2 days ago</span>
+                            <span class="topic-tag">Strategy</span>
+                            <span class="reply-count">28 replies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-item">
+                    <div class="topic-avatar" style="background: linear-gradient(135deg, #8ba888, #d4af37);">RW</div>
+                    <div class="topic-content">
+                        <a href="#" class="topic-title-link">Indoor practice ideas for winter?</a>
+                        <p>It's too cold to practice outside. What are some effective ways to work on my game indoors during winter months?</p>
+                        <div class="topic-meta">
+                            <span>👤 RobW</span>
+                            <span>🕐 2 days ago</span>
+                            <span class="topic-tag">Training</span>
+                            <span class="reply-count">19 replies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-space">
+            <p>Advertisement</p>
+            <div class="ad-placeholder">336 x 280 Medium Rectangle Ad</div>
+        </div>
+
+        <section class="comments-section">
+            <h2 class="section-header">Join the Conversation</h2>
+            <div id="disqus_thread"></div>
+            <noscript>
+                <div class="comments-placeholder">
+                    <h3>Disqus Integration</h3>
+                    <p>To enable full forum functionality with Disqus:</p>
+                    <ol>
+                        <li>Sign up at <a href="https://disqus.com" target="_blank">disqus.com</a></li>
+                        <li>Create a new site and get your shortname</li>
+                        <li>Replace 'YOUR_DISQUS_SHORTNAME' in the script with your actual shortname</li>
+                    </ol>
+                    <p><strong>Alternative:</strong> Consider using dedicated forum platforms like:</p>
+                    <ul>
+                        <li><a href="https://www.discourse.org/" target="_blank">Discourse</a> - Free, open-source forum software</li>
+                        <li><a href="https://vanilla forums.com/" target="_blank">Vanilla Forums</a> - Cloud-based community platform</li>
+                        <li><a href="https://flarum.org/" target="_blank">Flarum</a> - Lightweight, modern forum</li>
+                    </ul>
+                </div>
+            </noscript>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Golf Mastery Academy</h4>
+                <p>Your complete resource for learning golf from beginner to professional level.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="rules.html">Golf Rules</a></li>
+                    <li><a href="clubs.html">Club Guide</a></li>
+                    <li><a href="lessons.html">Lesson Plans</a></li>
+                    <li><a href="discussion.html">Forum</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="tips.html">Tips & Tricks</a></li>
+                    <li><a href="videos.html">Video Library</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Golf Mastery Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        var disqus_config = function () {
+            this.page.url = window.location.href;
+            this.page.identifier = 'golf-discussion-forum';
+        };
+        
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://YOUR_DISQUS_SHORTNAME.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</body>
+</html>
