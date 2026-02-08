@@ -44,7 +44,7 @@
         </div>
     </header>
 
-    <div class="ad-space">
+    <div class="ad-space" style="display: none;">
         <p>Advertisement</p>
         <div class="ad-placeholder">728 x 90 Banner Ad</div>
     </div>
@@ -60,18 +60,62 @@
                     </div>
                     <div class="club-illustration">
                         <svg width="300" height="250" viewBox="0 0 300 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Driver illustration -->
-                            <path d="M150 20 L150 180" stroke="#8ba888" stroke-width="4" stroke-linecap="round"/>
-                            <ellipse cx="150" cy="200" rx="30" ry="45" fill="#1a4d2e"/>
-                            <ellipse cx="150" cy="200" rx="25" ry="40" fill="#d4af37" opacity="0.3"/>
-                            <circle cx="150" cy="15" r="8" fill="#0f2818"/>
-                            <!-- Ball on tee -->
-                            <line x1="170" y1="220" x2="170" y2="200" stroke="#e8e4d8" stroke-width="2"/>
-                            <circle cx="170" cy="195" r="6" fill="#ffffff" stroke="#d4af37" stroke-width="1"/>
+                            <!-- Enhanced Driver illustration with realistic golfer -->
+                            <!-- Ground shadow -->
+                            <ellipse cx="150" cy="235" rx="40" ry="6" fill="#0f2818" opacity="0.2"/>
+                            
+                            <!-- Golfer (simplified side view) -->
+                            <!-- Head -->
+                            <circle cx="120" cy="80" r="12" fill="#d4a574"/>
+                            <!-- Cap -->
+                            <ellipse cx="120" cy="75" rx="13" ry="6" fill="#1a4d2e"/>
+                            <path d="M110 75 L107 78 L133 78 L130 75 Z" fill="#1a4d2e"/>
+                            
+                            <!-- Neck -->
+                            <rect x="117" y="92" width="6" height="8" fill="#d4a574"/>
+                            
+                            <!-- Torso -->
+                            <path d="M105 100 L105 150 Q105 153 108 153 L132 153 Q135 153 135 150 L135 100 Q135 98 132 98 L108 98 Q105 98 105 100 Z" fill="#ffffff"/>
+                            <path d="M115 105 L115 100 L118 97 L120 98 L122 97 L125 100 L125 105" fill="#ffffff" stroke="#1a4d2e" stroke-width="0.5"/>
+                            
+                            <!-- Arms - addressing the ball -->
+                            <path d="M105 110 Q95 120 90 140" stroke="#d4a574" stroke-width="7" stroke-linecap="round"/>
+                            <circle cx="90" cy="142" r="5" fill="#d4a574"/>
+                            
+                            <path d="M135 110 Q145 120 148 140" stroke="#d4a574" stroke-width="7" stroke-linecap="round"/>
+                            <circle cx="148" cy="142" r="5" fill="#d4a574"/>
+                            
+                            <!-- Legs -->
+                            <path d="M108 153 L110 190 L108 230" stroke="#3d2817" stroke-width="10" stroke-linecap="round"/>
+                            <path d="M132 153 L130 190 L132 230" stroke="#3d2817" stroke-width="10" stroke-linecap="round"/>
+                            
+                            <!-- Shoes -->
+                            <ellipse cx="108" cy="232" rx="8" ry="4" fill="#ffffff"/>
+                            <ellipse cx="132" cy="232" rx="8" ry="4" fill="#ffffff"/>
+                            
+                            <!-- Driver club -->
+                            <path d="M88 140 L120 130 L200 90" stroke="#8ba888" stroke-width="3" stroke-linecap="round"/>
+                            <ellipse cx="205" cy="85" rx="15" ry="25" fill="#1a4d2e"/>
+                            <ellipse cx="207" cy="85" rx="12" ry="22" fill="#d4af37" opacity="0.3"/>
+                            <text x="207" y="90" font-size="10" fill="#fff" font-weight="700">1</text>
+                            
+                            <!-- Golf ball on tee -->
+                            <line x1="200" y1="230" x2="200" y2="215" stroke="#e8e4d8" stroke-width="2"/>
+                            <circle cx="200" cy="210" r="6" fill="#ffffff" stroke="#1a4d2e" stroke-width="0.5"/>
+                            <circle cx="198" cy="208" r="1" fill="#e8e4d8" opacity="0.3"/>
+                            <circle cx="202" cy="208" r="1" fill="#e8e4d8" opacity="0.3"/>
+                            <circle cx="200" cy="212" r="1" fill="#e8e4d8" opacity="0.3"/>
+                            
                             <!-- Swing path arc -->
-                            <path d="M100 100 Q125 50 180 80" stroke="#d4af37" stroke-width="2" stroke-dasharray="5,5" opacity="0.6">
-                                <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
+                            <path d="M200 90 Q220 60 245 55" stroke="#d4af37" stroke-width="2" stroke-dasharray="4,4" opacity="0.5">
+                                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite"/>
                             </path>
+                            
+                            <!-- Flying ball -->
+                            <circle cx="245" cy="55" r="4" fill="#ffffff" stroke="#d4af37" stroke-width="0.5">
+                                <animate attributeName="cy" values="55;25;55" dur="2.5s" repeatCount="indefinite"/>
+                                <animate attributeName="cx" values="245;270;245" dur="2.5s" repeatCount="indefinite"/>
+                            </circle>
                         </svg>
                     </div>
                     <div class="club-content">
@@ -123,7 +167,7 @@
             </div>
         </section>
 
-        <div class="ad-space">
+        <div class="ad-space" style="display: none;">
             <p>Advertisement</p>
             <div class="ad-placeholder">336 x 280 Medium Rectangle Ad</div>
         </div>
@@ -250,7 +294,7 @@
             </div>
         </section>
 
-        <div class="ad-space">
+        <div class="ad-space" style="display: none;">
             <p>Advertisement</p>
             <div class="ad-placeholder">728 x 90 Banner Ad</div>
         </div>
@@ -322,7 +366,7 @@
             </div>
         </section>
 
-        <div class="ad-space">
+        <div class="ad-space" style="display: none;">
             <p>Advertisement</p>
             <div class="ad-placeholder">336 x 280 Medium Rectangle Ad</div>
         </div>
@@ -499,7 +543,7 @@
             </div>
         </section>
 
-        <div class="ad-space">
+        <div class="ad-space" style="display: none;">
             <p>Advertisement</p>
             <div class="ad-placeholder">728 x 90 Banner Ad</div>
         </div>
@@ -766,7 +810,7 @@
             </div>
         </section>
 
-        <div class="ad-space">
+        <div class="ad-space" style="display: none;">
             <p>Advertisement</p>
             <div class="ad-placeholder">728 x 90 Banner Ad</div>
         </div>

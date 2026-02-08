@@ -63,28 +63,99 @@
         </div>
         <div class="hero-illustration">
             <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Golfer silhouette -->
-                <ellipse cx="200" cy="350" rx="80" ry="10" fill="#0f2818" opacity="0.2"/>
-                <path d="M180 280 Q180 250 200 250 Q220 250 220 280" fill="#1a4d2e"/>
-                <circle cx="200" cy="230" r="20" fill="#d4af37"/>
-                <path d="M200 250 L200 300" stroke="#1a4d2e" stroke-width="8" stroke-linecap="round"/>
-                <path d="M200 270 L170 300 L165 340" stroke="#1a4d2e" stroke-width="6" stroke-linecap="round"/>
-                <path d="M200 270 L230 300 L235 340" stroke="#1a4d2e" stroke-width="6" stroke-linecap="round"/>
-                <!-- Golf club -->
-                <path d="M240 200 Q245 210 170 260" stroke="#8ba888" stroke-width="5" stroke-linecap="round"/>
-                <ellipse cx="165" cy="265" rx="10" ry="15" fill="#d4af37" transform="rotate(-35 165 265)"/>
-                <!-- Golf ball trajectory -->
-                <circle cx="280" cy="150" r="6" fill="#ffffff" stroke="#d4af37" stroke-width="2">
-                    <animate attributeName="cy" values="150;80;150" dur="2s" repeatCount="indefinite"/>
-                    <animate attributeName="cx" values="280;320;280" dur="2s" repeatCount="indefinite"/>
+                <!-- Ground shadow -->
+                <ellipse cx="200" cy="360" rx="90" ry="12" fill="#0f2818" opacity="0.2"/>
+                
+                <!-- Golfer - More realistic proportions -->
+                <!-- Head -->
+                <circle cx="200" cy="180" r="18" fill="#d4a574"/>
+                <!-- Hair -->
+                <path d="M182 175 Q185 165 200 163 Q215 165 218 175" fill="#3d2817"/>
+                <!-- Cap -->
+                <ellipse cx="200" cy="170" rx="20" ry="8" fill="#1a4d2e"/>
+                <path d="M185 170 L180 175 L220 175 L215 170 Z" fill="#1a4d2e"/>
+                <!-- Cap brim shadow -->
+                <ellipse cx="200" cy="183" rx="22" ry="3" fill="#0f2818" opacity="0.3"/>
+                
+                <!-- Neck -->
+                <rect x="195" y="198" width="10" height="12" fill="#d4a574"/>
+                
+                <!-- Torso - Polo shirt -->
+                <path d="M175 210 L175 280 Q175 285 180 285 L220 285 Q225 285 225 280 L225 210 Q225 205 220 205 L180 205 Q175 205 175 210 Z" fill="#1a4d2e"/>
+                <!-- Shirt collar -->
+                <path d="M190 210 L190 205 L195 200 L200 202 L205 200 L210 205 L210 210" fill="#1a4d2e" stroke="#d4af37" stroke-width="1"/>
+                <!-- Shirt buttons -->
+                <circle cx="200" cy="220" r="2" fill="#d4af37"/>
+                <circle cx="200" cy="235" r="2" fill="#d4af37"/>
+                <circle cx="200" cy="250" r="2" fill="#d4af37"/>
+                
+                <!-- Arms - Left arm back -->
+                <path d="M175 220 Q165 230 160 250 L155 268" stroke="#d4a574" stroke-width="10" stroke-linecap="round"/>
+                <path d="M175 220 Q170 225 168 235" stroke="#1a4d2e" stroke-width="11" stroke-linecap="round"/>
+                <!-- Left hand -->
+                <circle cx="155" cy="270" r="7" fill="#d4a574"/>
+                
+                <!-- Golf club grip -->
+                <path d="M155 268 L165 240 L250 160" stroke="#0f2818" stroke-width="4" stroke-linecap="round"/>
+                <rect x="153" y="260" width="8" height="20" rx="2" fill="#0f2818"/>
+                
+                <!-- Arms - Right arm forward -->
+                <path d="M225 225 Q235 235 240 250 L242 268" stroke="#d4a574" stroke-width="10" stroke-linecap="round"/>
+                <path d="M225 225 Q230 230 233 240" stroke="#1a4d2e" stroke-width="11" stroke-linecap="round"/>
+                <!-- Right hand on club -->
+                <circle cx="242" cy="270" r="7" fill="#d4a574"/>
+                <ellipse cx="242" cy="268" rx="8" ry="10" fill="#d4a574" opacity="0.6"/>
+                
+                <!-- Golf club shaft -->
+                <path d="M240 265 L248 200 L255 150" stroke="#8ba888" stroke-width="3" stroke-linecap="round"/>
+                <!-- Club head -->
+                <ellipse cx="257" cy="142" rx="8" ry="18" fill="#1a4d2e" transform="rotate(-25 257 142)"/>
+                <ellipse cx="259" cy="142" rx="6" ry="16" fill="#d4af37" opacity="0.4" transform="rotate(-25 259 142)"/>
+                
+                <!-- Pants/Shorts -->
+                <path d="M180 285 L185 340 L190 360" stroke="#3d2817" stroke-width="14" stroke-linecap="round"/>
+                <path d="M220 285 L215 340 L210 360" stroke="#3d2817" stroke-width="14" stroke-linecap="round"/>
+                <!-- Belt -->
+                <rect x="178" y="283" width="44" height="4" rx="1" fill="#0f2818"/>
+                <rect x="198" y="283" width="4" height="6" rx="1" fill="#d4af37"/>
+                
+                <!-- Shoes -->
+                <ellipse cx="190" cy="362" rx="12" ry="6" fill="#ffffff"/>
+                <ellipse cx="210" cy="362" rx="12" ry="6" fill="#ffffff"/>
+                <!-- Shoe details -->
+                <path d="M185 362 L195 362" stroke="#1a4d2e" stroke-width="1"/>
+                <path d="M205 362 L215 362" stroke="#1a4d2e" stroke-width="1"/>
+                
+                <!-- Golf ball on tee -->
+                <line x1="290" y1="350" x2="290" y2="335" stroke="#e8e4d8" stroke-width="2"/>
+                <circle cx="290" cy="330" r="8" fill="#ffffff" stroke="#d4af37" stroke-width="1"/>
+                <!-- Ball dimples -->
+                <circle cx="287" cy="328" r="1.5" fill="#e8e4d8" opacity="0.4"/>
+                <circle cx="293" cy="328" r="1.5" fill="#e8e4d8" opacity="0.4"/>
+                <circle cx="290" cy="332" r="1.5" fill="#e8e4d8" opacity="0.4"/>
+                
+                <!-- Golf ball in flight with trajectory -->
+                <circle cx="320" cy="200" r="6" fill="#ffffff" stroke="#d4af37" stroke-width="1">
+                    <animate attributeName="cy" values="200;100;200" dur="3s" repeatCount="indefinite"/>
+                    <animate attributeName="cx" values="320;350;320" dur="3s" repeatCount="indefinite"/>
+                    <animate attributeName="r" values="6;4;6" dur="3s" repeatCount="indefinite"/>
                 </circle>
-                <path d="M270 160 Q295 95 310 90" stroke="#d4af37" stroke-width="2" stroke-dasharray="5,5" opacity="0.5"/>
+                <!-- Trajectory path -->
+                <path d="M290 330 Q320 200 350 100" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.4"/>
+                
+                <!-- Motion lines for swing -->
+                <path d="M245 170 Q260 160 270 155" stroke="#8ba888" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.3">
+                    <animate attributeName="opacity" values="0;0.5;0" dur="2s" repeatCount="indefinite"/>
+                </path>
+                <path d="M250 180 Q265 170 275 165" stroke="#8ba888" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.3">
+                    <animate attributeName="opacity" values="0;0.5;0" dur="2s" begin="0.2s" repeatCount="indefinite"/>
+                </path>
             </svg>
         </div>
     </header>
 
-    <!-- Ad Space -->
-    <div class="ad-space">
+    <!-- Ad Space - Hidden until site has more engagement -->
+    <div class="ad-space" style="display: none;">
         <p>Advertisement</p>
         <div class="ad-placeholder">728 x 90 Banner Ad</div>
     </div>
